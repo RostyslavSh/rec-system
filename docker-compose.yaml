@@ -22,4 +22,11 @@ restapi:
         DATABASE_USER: django
         DATABASE_PASSWORD: django
         DATABASE_SERVICE_HOST: database
+client:
+    build: ./docker/client
+    volumes:
+        - ./client:/client
+    ports:
+        - "80:3000"
+    command: npm start
 
